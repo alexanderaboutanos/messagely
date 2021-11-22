@@ -1,4 +1,9 @@
-/** GET /:id - get detail of message.
+/** @format */
+const express = require("express");
+const router = new express.Router();
+
+/**
+ * GET /:id - get detail of message.
  *
  * => {message: {id,
  *               body,
@@ -9,8 +14,11 @@
  *
  * Make sure that the currently-logged-in users is either the to or from user.
  *
- **/
+ */
 
+// router.get('/:id', async (req, res, next) =>{
+//     results =
+// })
 
 /** POST / - post message.
  *
@@ -18,7 +26,6 @@
  *   {message: {id, from_username, to_username, body, sent_at}}
  *
  **/
-
 
 /** POST/:id/read - mark message as read:
  *
@@ -28,3 +35,4 @@
  *
  **/
 
+module.exports = router;
