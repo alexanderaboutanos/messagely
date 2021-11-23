@@ -22,10 +22,11 @@ CREATE TABLE messages (
 
 /** IF YOU WANT TO SEED DATA**/
 
+-- with a single round of bcrypt work factor, I used the following three passwords to generate these hashed passwords: password1, password 2, password3
 INSERT INTO users
-  VALUES    ('johnDoe123', 'password1', 'John', 'Doe', '1234567890', CURRENT_TIMESTAMP, null),
-            ('janeSmith123', 'password2', 'Jane', 'Smith', '0987654321', CURRENT_TIMESTAMP, null),
-            ('chadMcChaddy321', 'chadword', 'Chad', 'McChaddy', '6543217890', CURRENT_TIMESTAMP, null);
+  VALUES    ('johnDoe123', '$2a$04$.EYyUFn8tLfx84dGgZfYKuQ9jp9pSVNWCPh8RCFJJolWnwDQPu0dW', 'John', 'Doe', '1234567890', CURRENT_TIMESTAMP, null),
+            ('janeSmith123', '$2a$04$79iBGX7rfU6P.W7RngGAnOptCejoOxgYeXUw6O5UrY5a6E/Bpmg3y', 'Jane', 'Smith', '0987654321', CURRENT_TIMESTAMP, null),
+            ('chadMcChaddy321', '$2a$04$NHhVPjZg/UIU37izdDmbkOOCqaFXgIQPczcOuHNppa4mXB./jlqxO', 'Chad', 'McChaddy', '6543217890', CURRENT_TIMESTAMP, null);
 
 INSERT INTO messages (from_username, to_username, body, sent_at, read_at)
   VALUES ('johnDoe123', 'janeSmith123', 'I love you!', CURRENT_TIMESTAMP, null),
